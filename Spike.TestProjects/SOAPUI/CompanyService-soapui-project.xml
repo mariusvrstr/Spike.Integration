@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="076f799b-919d-48ed-ad67-588c03b34c5b" activeEnvironment="Default" name="companyservice" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="51475ab0-a83e-4f5f-b7fc-bb36867ac460" wsaVersion="200508" name="WSHttpBinding_CompanyService" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_CompanyService" soapVersion="1_2" anonymous="optional" definition="https://localhost:44309/services/v01/companyservice.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost:44309/services/v01/companyservice.svc?wsdl"><con:part><con:url>https://localhost:44309/services/v01/companyservice.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CompanyService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="www.inoxico.com" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="WSHttpBinding_CompanyService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="www.inoxico.com" location="https://localhost:44309/services/v01/CompanyService.svc?wsdl=wsdl0"/>
+  <wsdl:types/>
+  <wsdl:binding name="WSHttpBinding_CompanyService" type="i0:CompanyService">
+    <wsp:PolicyReference URI="#WSHttpBinding_CompanyService_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Echo">
+      <soap12:operation soapAction="www.inoxico.com/CompanyService/Echo" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies">
+      <soap12:operation soapAction="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails">
+      <soap12:operation soapAction="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompanyService">
+    <wsdl:port name="WSHttpBinding_CompanyService" binding="tns:WSHttpBinding_CompanyService">
+      <soap12:address location="https://localhost:44309/services/v01/CompanyService.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://localhost:44309/services/v01/CompanyService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://localhost:44309/services/v01/CompanyService.svc?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="www.inoxico.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="www.inoxico.com" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="www.inoxico.com/Imports">
+      <xsd:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd0" namespace="www.inoxico.com"/>
+      <xsd:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+      <xsd:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CompanyService_Echo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Echo"/>
+  </wsdl:message>
+  <wsdl:message name="CompanyService_Echo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EchoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CompanyService_Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies"/>
+  </wsdl:message>
+  <wsdl:message name="CompanyService_Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompaniesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CompanyService_Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails"/>
+  </wsdl:message>
+  <wsdl:message name="CompanyService_Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CompanyService">
+    <wsdl:operation name="Echo">
+      <wsdl:input wsaw:Action="www.inoxico.com/CompanyService/Echo" message="tns:CompanyService_Echo_InputMessage"/>
+      <wsdl:output wsaw:Action="www.inoxico.com/CompanyService/EchoResponse" message="tns:CompanyService_Echo_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies">
+      <wsdl:input wsaw:Action="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies" message="tns:CompanyService_Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies_InputMessage"/>
+      <wsdl:output wsaw:Action="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompaniesResponse" message="tns:CompanyService_Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails">
+      <wsdl:input wsaw:Action="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails" message="tns:CompanyService_Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails_InputMessage"/>
+      <wsdl:output wsaw:Action="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetailsResponse" message="tns:CompanyService_Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="www.inoxico.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.inoxico.com">
+  <xs:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+  <xs:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public"/>
+  <xs:element name="Echo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="echoValue" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EchoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EchoResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchDetails" nillable="true" type="q1:CompanySearchParameters" xmlns:q1="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompaniesResult" nillable="true" type="q2:PagedResponseOfCompanyBasicProfileCompanySortColumnub3MD0V6" xmlns:q2="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="noxId" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="referenceNumber" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="moduleSelection" nillable="true" type="q3:ArrayOfModule" xmlns:q3="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetailsResult" nillable="true" type="q4:Company" xmlns:q4="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies">
+  <xs:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public"/>
+  <xs:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="CompanySearchParameters">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyBasicProfile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageDetails" nillable="true" type="q1:PageDetailsOfCompanySortColumnOV9SMoGH" xmlns:q1="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanySearchParameters" nillable="true" type="tns:CompanySearchParameters"/>
+  <xs:complexType name="CompanyBasicProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NoxId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyBasicProfile" nillable="true" type="tns:CompanyBasicProfile"/>
+  <xs:simpleType name="CompanySortColumn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined"/>
+      <xs:enumeration value="Name"/>
+      <xs:enumeration value="ReferenceNumber"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CompanySortColumn" nillable="true" type="tns:CompanySortColumn"/>
+  <xs:complexType name="ArrayOfCompanyBasicProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyBasicProfile" nillable="true" type="tns:CompanyBasicProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyBasicProfile" nillable="true" type="tns:ArrayOfCompanyBasicProfile"/>
+  <xs:complexType name="ArrayOfModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Module" type="tns:Module"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModule" nillable="true" type="tns:ArrayOfModule"/>
+  <xs:simpleType name="Module">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined"/>
+      <xs:enumeration value="Judgement"/>
+      <xs:enumeration value="Accounts">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Module" nillable="true" type="tns:Module"/>
+  <xs:complexType name="Company">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyBasicProfile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountsModule" nillable="true" type="tns:AccountsModule"/>
+          <xs:element minOccurs="0" name="JudgementModule" nillable="true" type="tns:JudgementModule"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company"/>
+  <xs:complexType name="AccountsModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NoxId" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountsModule" nillable="true" type="tns:AccountsModule"/>
+  <xs:complexType name="JudgementModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="IssuedDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="NoxId" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JudgementModule" nillable="true" type="tns:JudgementModule"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public">
+  <xs:import schemaLocation="https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+  <xs:complexType name="PageDetailsOfCompanySortColumnOV9SMoGH">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PageDetailsOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CompanySortColumn" Namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int"/>
+      <xs:element minOccurs="0" name="PageSize" type="xs:int"/>
+      <xs:element minOccurs="0" name="RemainingItems" type="xs:int"/>
+      <xs:element minOccurs="0" name="SortColumn" type="q1:CompanySortColumn" xmlns:q1="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+      <xs:element minOccurs="0" name="SortOrder" type="tns:SortOrder"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageDetailsOfCompanySortColumnOV9SMoGH" nillable="true" type="tns:PageDetailsOfCompanySortColumnOV9SMoGH"/>
+  <xs:simpleType name="SortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Accending"/>
+      <xs:enumeration value="Decending"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrder" nillable="true" type="tns:SortOrder"/>
+  <xs:complexType name="PagedResponseOfCompanyBasicProfileCompanySortColumnub3MD0V6">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PagedResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CompanyBasicProfile" Namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+          <GenericParameter Name="CompanySortColumn" Namespace="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="q2:ArrayOfCompanyBasicProfile" xmlns:q2="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies"/>
+      <xs:element minOccurs="0" name="PageDetails" nillable="true" type="tns:PageDetailsOfCompanySortColumnOV9SMoGH"/>
+      <xs:element minOccurs="0" name="ResultCode" type="tns:ResultCode"/>
+      <xs:element minOccurs="0" name="ResultDescription" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagedResponseOfCompanyBasicProfileCompanySortColumnub3MD0V6" nillable="true" type="tns:PagedResponseOfCompanyBasicProfileCompanySortColumnub3MD0V6"/>
+  <xs:simpleType name="ResultCode">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ResultCode" nillable="true" type="tns:ResultCode"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:44309/services/v01/CompanyService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://localhost:44309/services/v01/CompanyService.svc</con:endpoint></con:endpoints><con:operation id="e717b797-886f-4826-976f-de85dcdedbe0" isOneWay="false" action="www.inoxico.com/CompanyService/Echo" name="Echo" bindingOperationName="Echo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="36ad8d25-0947-48b8-9248-3039120d5a78" name="Request 1" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:44309/services/v01/CompanyService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:inox="www.inoxico.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <inox:Echo>\r
+         <!--Optional:-->\r
+         <inox:echoValue>Test</inox:echoValue>\r
+      </inox:Echo>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:username>Username</con:username><con:password>Password</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.inoxico.com/CompanyService/Echo" addDefaultAction="true" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a02203ea-6ffd-4886-a68f-30bc2496c637" isOneWay="false" action="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails" name="Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails" bindingOperationName="Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8c36059a-4b96-473e-b5b8-7e9cc2e9a2c2" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:44309/services/v01/CompanyService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:inox="www.inoxico.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <inox:Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails>\r
+         <!--Optional:-->\r
+         <inox:noxId>?</inox:noxId>\r
+         <!--Optional:-->\r
+         <inox:referenceNumber>?</inox:referenceNumber>\r
+      </inox:Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.GetCompanyDetails"/></con:call></con:operation><con:operation id="fc3ef86b-7031-41e0-8027-c1de9e6d2ee7" isOneWay="false" action="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies" name="Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies" bindingOperationName="Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c3eb604-e242-40b2-b699-e553a4d41657" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:44309/services/v01/CompanyService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:inox="www.inoxico.com" xmlns:spik="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public.V01.Companies" xmlns:spik1="http://schemas.datacontract.org/2004/07/Spike.Contracts.Public">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <inox:Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies>\r
+         <!--Optional:-->\r
+         <inox:searchDetails>\r
+            <!--Optional:-->\r
+            <spik:Name>?</spik:Name>\r
+            <!--Optional:-->\r
+            <spik:NoxId>?</spik:NoxId>\r
+            <!--Optional:-->\r
+            <spik:ReferenceNumber>?</spik:ReferenceNumber>\r
+            <!--Optional:-->\r
+            <spik:PageDetails>\r
+               <!--Optional:-->\r
+               <spik1:PageNumber>?</spik1:PageNumber>\r
+               <!--Optional:-->\r
+               <spik1:PageSize>?</spik1:PageSize>\r
+               <!--Optional:-->\r
+               <spik1:RemainingItems>?</spik1:RemainingItems>\r
+               <!--Optional:-->\r
+               <spik1:SortColumn>?</spik1:SortColumn>\r
+               <!--Optional:-->\r
+               <spik1:SortOrder>?</spik1:SortOrder>\r
+            </spik:PageDetails>\r
+         </inox:searchDetails>\r
+      </inox:Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.inoxico.com/CompanyService/Spike.Contracts.Public.V01.Companies.ICompanyService.SearchCompanies"/></con:call></con:operation></con:interface><con:testSuite id="af4be570-4bd8-4654-9b17-00b66197b4d1" name="Tests"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b5e2398e-e9e1-4650-9661-1db05b59566e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Echo Test" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Environment Setup" id="50733333-c2ff-445a-ad3b-133c8fd66c5a"><con:settings/><con:config><script>def currentDate = new Date().format('dd/MM/yyyy');
+
+def currentValue = testRunner.testCase.getPropertyValue("CurrentDate")
+
+testRunner.testCase.setPropertyValue( "CurrentDate", currentDate )
+
+log.info ("Current value is: [" + currentDate + "] and new value is [" + currentDate + "]");</script></con:config></con:testStep><con:testStep type="properties" name="Parameters" id="f8559889-a6b7-4224-83bd-e1b2f3960d07"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>EchoMessage</con:name><con:value>This is a sample message</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="Prepare Echo" id="a2163f7c-3b56-4898-8c39-a2033e207f6f"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false" disabled="false"><con:name>Map Message</con:name><con:sourceType>EchoMessage</con:sourceType><con:sourceStep>Parameters</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>Echo - Request</con:targetStep><con:targetPath>declare namespace inox='www.inoxico.com';
+//inox:Echo/inox:echoValue</con:targetPath><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="request" id="5782d213-79fb-43ab-9cac-f54564874cd3" name="Echo - Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSHttpBinding_CompanyService</con:interface><con:operation>Echo</con:operation><con:request name="Echo - Request" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="true" useWsReliableMessaging="false" wssPasswordType="PasswordText" id="f532442d-193e-47d6-bed2-4a68829e1c77"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:44309/services/v01/CompanyService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:inox="www.inoxico.com">
+   <soap:Header/>
+   <soap:Body>
+      <inox:Echo>
+      	<!-- Last Update: ${CurrentDate} -->
+         <inox:echoValue>This is a sample message</inox:echoValue>
+      </inox:Echo>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="61fc9041-8075-4cd8-9406-cadaabfd1529" name="SOAP Response"/><con:assertion type="Simple Contains" id="6073a42d-d1f0-452a-87a3-d8a145512a48" name="Contains"><con:configuration><token>Echo response</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>Username</con:username><con:password>Password</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.inoxico.com/CompanyService/Echo" addDefaultAction="true" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>CurrentDate</con:name><con:value>04/07/2018</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

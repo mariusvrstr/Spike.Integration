@@ -1,0 +1,43 @@
+{
+	"id": "979430b5-84c2-fb73-a488-74e9451a9b14",
+	"name": "Sample API Tests",
+	"description": "",
+	"order": [
+		"8bf6cd0d-6de3-9f06-8a1b-099750c8547d"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1530632887446,
+	"owner": "287800",
+	"public": false,
+	"requests": [
+		{
+			"id": "8bf6cd0d-6de3-9f06-8a1b-099750c8547d",
+			"headers": "Authorization: {{BasicAuth}}\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{BasicAuth}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://{{BaseURL}}/api/v01/company/echo/testme",
+			"queryParams": [],
+			"preRequestScript": "// Get todays date\r\nvar tomorrowsDate = new Date();\r\ntomorrowsDate.setDate(tomorrowsDate.getDate()+1);\r\n\r\nconsole.log('Tomorrows date is [' + tomorrowsDate + ']');\r\n",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1530633366894,
+			"name": "Test Echo",
+			"description": "",
+			"collectionId": "979430b5-84c2-fb73-a488-74e9451a9b14",
+			"responses": []
+		}
+	]
+}

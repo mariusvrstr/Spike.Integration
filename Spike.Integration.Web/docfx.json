@@ -1,0 +1,81 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "**/Spike.Integration.Services.csproj", // Specify which projects to include
+            "**/Spike.Contracts.csproj"
+          ],
+          "exclude": [
+            "**/obj/**", // Ignore specific folders
+            "**/bin/**",
+            "_site/**",
+            "**/CompanyServiceFacadeV01.cs" // Ignore specific files
+          ],
+          "src": "../" // Set the context to the entire solution (*.sln level)
+        }
+      ],
+      "dest": "obj/service" // Destination drop for meta data files
+     // "filter": "filterConfig.yml" // Some advance filtering can be done here
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "service/**.yml" // This generates the _site\service\*.html document for each file
+        ],
+        "cwd": "obj"
+      },
+      // Build the root web index.html & toc.html
+      {
+        "files": [
+          "service/*.md",
+          "articles/**.md",
+          "toc.yml",
+          "*.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "dest": "_site",
+    "template": [
+      "default"
+    ],
+    "globalMetadata": {
+      "_appTitle": "Lib.AspNetCore.Mvc.JqGrid",
+      "_appFooter": "Copyright © 2018 - Web Service Documentation",
+     // "_appLogoPath": "resources/svg/logo.svg",
+     // "_appFaviconPath": "resources/ico/favicon.ico",
+      "_disableBreadcrumb": true,
+      "_disableAffix": true,
+      "_disableContribution": true
+    }
+  }
+}
